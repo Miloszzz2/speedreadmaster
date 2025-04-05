@@ -4,10 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { Toaster } from "@/components/ui/toaster";
 
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: "SpeedRead",
@@ -20,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.className} suppressHydrationWarning>
-      <body className="font-sans antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body>
         <ThemeProvider>
           {children}
           <Toaster />
