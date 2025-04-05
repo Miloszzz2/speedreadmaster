@@ -1,8 +1,33 @@
 'use client'
 import { useTheme } from "@/hooks/use-theme";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render theme toggle until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <header className="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold text-primary-700 dark:text-primary-400 flex items-center">
+            <span className="mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gauge">
+                <path d="m12 14 4-4" />
+                <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+              </svg>
+            </span>
+            <span>SpeedRead</span>
+          </h1>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
@@ -20,7 +45,6 @@ export default function Header() {
         <button
           className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-hidden focus:ring-2 focus:ring-primary-500"
           onClick={toggleTheme}
-
         >
           {theme === 'dark' ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sun">

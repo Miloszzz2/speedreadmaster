@@ -187,8 +187,8 @@ export default function ReadingArea({ speedReadState, font, fontSize }: ReadingA
             const isEndOfChunk = currentChunk.includes(index) && !currentChunk.includes(index + 1);
 
             return (
-              <span> <span
-                key={index}
+              <span key={index}> <span
+
                 className={cn(
                   "transition-colors duration-200 relative",
                   currentChunk.includes(index)
