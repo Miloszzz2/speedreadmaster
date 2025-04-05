@@ -8,11 +8,11 @@ import UploadDialog from "./UploadDialog";
 import Quiz from "./Quiz";
 import { useSpeedRead } from "@/hooks/useSpeedRead";
 import { useToast } from "@/hooks/use-toast";
+import AdBanner from "./AdBaner";
 
 export default function SpeedReadApp() {
   const { toast } = useToast();
   const [uploadDialogOpen, setUploadDialogOpen] = useState(false);
-  const [showQuiz, setShowQuiz] = useState(false);
 
   const speedReadState = useSpeedRead();
   const {
@@ -48,7 +48,6 @@ export default function SpeedReadApp() {
   };
 
   const handleQuizComplete = (score: number) => {
-    setShowQuiz(false);
     toast({
       title: "Quiz Completed!",
       description: `Your score: ${score} out of 3`,
@@ -71,6 +70,12 @@ export default function SpeedReadApp() {
               font={currentFont}
               fontSize={currentFontSize}
             />
+
+            {/* Ad Space */}
+            <div className="w-full min-h-[100px] bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center border border-neutral-200 dark:border-neutral-700">
+              <AdBanner />
+            </div>
+
 
             <Quiz onComplete={handleQuizComplete} />
 
