@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({
-  subsets: ["latin"],
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <ThemeProvider>
           {children}
