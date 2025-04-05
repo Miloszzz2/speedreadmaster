@@ -37,7 +37,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "miloszzz2-speedreadma-88"
+          project: "speedreadmaster"
           entrypoint: "./server.cjs"
           root: ".next/standalone"
           
