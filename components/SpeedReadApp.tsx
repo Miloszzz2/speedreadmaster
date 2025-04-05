@@ -72,9 +72,8 @@ export default function SpeedReadApp() {
             />
 
             {/* Ad Space */}
-            <div className="w-full min-h-[100px] bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center border border-neutral-200 dark:border-neutral-700">
-              <AdBanner />
-            </div>
+            <AdBanner />
+
 
 
             <Quiz onComplete={handleQuizComplete} />
