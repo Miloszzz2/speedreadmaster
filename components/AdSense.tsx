@@ -6,7 +6,7 @@ const AdSense = () => {
    return (
       <Script
          async
-         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${process.env.NEXT_PUBLIC_ADSENSE_PUB_ID}`}
+         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3042835337090879`}
          crossOrigin='anonymous'
          strategy='afterInteractive'
       />
