@@ -8,7 +8,6 @@ import UploadDialog from "./UploadDialog";
 import Quiz from "./Quiz";
 import { useSpeedRead } from "@/hooks/useSpeedRead";
 import { useToast } from "@/hooks/use-toast";
-import AdBanner from "./AdBaner";
 
 export default function SpeedReadApp() {
   const { toast } = useToast();
@@ -70,9 +69,6 @@ export default function SpeedReadApp() {
               font={currentFont}
               fontSize={currentFontSize}
             />
-
-            {/* Ad Space */}
-            <AdBanner />
 
 
 

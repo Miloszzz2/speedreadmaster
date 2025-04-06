@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { Toaster } from "@/components/ui/toaster";
-import AdSense from "@/components/AdSense";
 
 
 export const metadata: Metadata = {
@@ -18,9 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <AdSense />
-      </head>
       <body>
         <ThemeProvider>
           {children}
